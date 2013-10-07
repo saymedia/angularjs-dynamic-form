@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>Dynamic Form Example</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+<script type="text/javascript" src="../src/angulardynamicform.js"></script>
+<script type="text/javascript" src="example.js"></script>
+</head>
+<body ng-app="example" ng-controller="Example" class="ng-cloak">
+
+<dynamic-table-form fields="fields" data="data">
+
+  <input dynamic-field-type="string" ng-model="value" type="text" maxlength="{{config.maxLength}}" size="{{config.maxLength}}">
+
+  <input dynamic-field-type="date" ng-model="value" type="date">
+
+  <ul dynamic-field-type="array">
+    <li dynamic-field-child>
+      <ng-transclude></ng-transclude>
+      <button ng-click="removeChild(childKey)">Remove</button>
+    </li>
+    <button ng-click="addChild()">Add Another</button>
+  </ul>
+
+</dynamic-table-form>
+
+<pre>{{data|json}}</pre>
+
+</body>
+</html>
