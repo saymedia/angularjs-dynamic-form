@@ -36,11 +36,6 @@
 
                           $element.html('');
 
-                          var tableElem = angular.element('<table></table>');
-                          // FIXME: I bet this doesn't work in some browsers (I'm looking at you,
-                          // old versions of MSIE) because they'll implicitly create a TBODY in
-                          // here and then refuse to display rows that aren't in it.
-
                           function linkFunctionForFieldType(type) {
                               var match = type.match(/^(\w+)\<.*\>$/);
                               if (match) {
@@ -70,7 +65,7 @@
                               // new ones.
 
                               // empty the table in case we've already got some stuff in there
-                              tableElem.html('');
+                              $element.html('');
 
                               var data = $scope.dataExpr($scope);
 
@@ -149,7 +144,7 @@
                                           updateFieldType
                                       );
 
-                                      tableElem.append(rowElem);
+                                      $element.append(rowElem);
                                   }
                               );
                           }
@@ -170,8 +165,6 @@
                               },
                               false
                           );
-
-                          $element.append(tableElem);
 
                       };
                   }
