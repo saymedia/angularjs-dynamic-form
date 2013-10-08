@@ -1,13 +1,19 @@
+<!DOCTYPE html>
 <html>
 <head>
 <title>Dynamic Form Example</title>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
 <script type="text/javascript" src="../src/angulardynamicform.js"></script>
 <script type="text/javascript" src="example.js"></script>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 </head>
 <body ng-app="example" ng-controller="Example" class="ng-cloak">
 
-<dynamic-table-form fields="fields" data="data">
+<div class="container">
+
+<h1>Dynamic Form</h1>
+
+<dynamic-table-form fields="fields" data="data" class="form-horizontal">
 
   <input dynamic-field-type="string" ng-model="value" type="text" maxlength="{{config.maxLength}}" size="{{config.maxLength}}">
 
@@ -23,7 +29,11 @@
 
 </dynamic-table-form>
 
+<h1>Raw Data</h1>
+
 <pre>{{data|json}}</pre>
+
+</div>
 
 </body>
 </html>

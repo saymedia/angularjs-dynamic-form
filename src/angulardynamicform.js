@@ -1,4 +1,4 @@
-(function (angular, document) {
+(function (angular) {
 
      var module = angular.module('dynamic-form', ['ng']);
 
@@ -78,17 +78,14 @@
                                   fields,
                                   function (field) {
 
-                                      // We need to create the table elements via the DOM API
-                                      // because parsing individual table sub-elements outside
-                                      // of the context of a table does silly things.
                                       var rowElem = angular.element(
-                                          document.createElement('tr')
+                                          '<div class="control-group"></div>'
                                       );
                                       var captionElem = angular.element(
-                                          document.createElement('th')
+                                          '<label class="control-label"></label>'
                                       );
                                       var bodyElem = angular.element(
-                                          document.createElement('td')
+                                          '<div class="controls"></div>'
                                       );
                                       rowElem.append(captionElem);
                                       rowElem.append(bodyElem);
@@ -182,4 +179,4 @@
          }]
      );
 
-})(angular, document);
+})(angular);
