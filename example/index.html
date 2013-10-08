@@ -27,6 +27,11 @@
     <button ng-click="addChild()">Add Another</button>
   </ul>
 
+  <select dynamic-field-type="select" ng-model="value"
+          ng-options="option.value as option.caption for option in config.options"></select>
+
+  <input dynamic-field-type="integer" ng-model="value" type="number" size="{{config.maxLength}}" maxlength="{{config.maxLength}}" min="{{config.minValue}}" max="{{config.maxValue}}">
+
 </dynamic-table-form>
 
 <h1>Raw Data</h1>
