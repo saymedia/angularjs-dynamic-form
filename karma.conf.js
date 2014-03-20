@@ -11,13 +11,14 @@ module.exports = function(config) {
 
     plugins: [
         'karma-phantomjs-launcher',
+        'karma-chrome-launcher',
         'karma-jasmine'
     ],
 
     // list of files / patterns to load in the browser
     files: [
       'bower_components/angular/angular.js',
-      //'bower_components/angular/angular-mocks.js',
+      'bower_components/angular-mocks/angular-mocks.js',
       'src/*.js',
       'test/*.js'
     ],
@@ -46,7 +47,6 @@ module.exports = function(config) {
     // - PhantomJS
     // - IE (only Windows)
     browsers: ['PhantomJS'],
-
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit

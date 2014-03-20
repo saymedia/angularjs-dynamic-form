@@ -3,9 +3,12 @@ module.exports = function (grunt) {
     'use strict';
     grunt.initConfig({
         connect: {
-            options: {
-                port: 9001,
-                hostname: '0.0.0.0'
+            server: {
+                options: {
+                    port: 9001,
+                    base: '.',
+                    hostname: '0.0.0.0'
+                }
             }
         },
         karma: {
