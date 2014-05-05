@@ -95,6 +95,27 @@ it as the `ng-model` of a form element as shown in the HTML example earlier in t
 A more complete example is available in [example/](example/) in the repository, and you can also
 [see the example live](http://saymedia.github.io/angularjs-dynamic-form/example/).
 
+Collection Types
+----------------
+
+The original design for this library called for supporting special "collection types", which
+are fields representing arrays or objects. The intent was that fields could have specifiers
+like `array<string>` which would cause the module to first look for a field type called
+`array` which could then transclude in a field for each item -- in this example the field
+element for `string`. This would allow a single field type to be created for editing arrays
+of any type, delegating to another field type for editing individual elements.
+
+This feature is not yet implemented, although the collection type syntax can be parsed
+and will be ignored. The practical implication of this for the moment is that it is not
+possible to have field types containing `<` and `>` symbols.
+
+The example linked above contains an ``array`` field element, but it is inoperable.
+Support for this may be added in a future version.
+
+In the mean time, arrays of specific types can be supported manually by the caller, by
+creating a type name like `arrayOfString` and then populating that type's field element
+with a UI for adding and removing strings to the array given in `value`.
+
 License
 -------
 
