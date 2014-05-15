@@ -1,6 +1,6 @@
 {
   "name": "angularjs-dynamic-form",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "AngularJS directive for creating dynamic forms based on schemas that aren't known until runtime",
   "license": "MIT",
   "main": "src/angulardynamicform.js",
