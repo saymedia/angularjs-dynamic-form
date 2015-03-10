@@ -94,6 +94,14 @@
                                           var fieldScope = $scope.$new(true);
                                           fieldScope.config = field;
 
+                                          rowElem.addClass('control-group--' +
+                                              field.model.replace(/([a-z])([A-Z])/g,
+                                                  function (m) {
+                                                      return m[0] + '-' + m[1];
+                                                  }
+                                              ).toLowerCase()
+                                          );
+
                                           var modelGet = $parse(field.model);
                                           var modelSet = modelGet.assign;
 
