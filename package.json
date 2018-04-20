@@ -1,4 +1,6 @@
 {
+  "name": "angularjs-dynamic-form",
+  "version": "0.0.0",
   "devDependencies": {
     "grunt-karma": "^0.8.2",
     "grunt-cli": "^0.1.13",
